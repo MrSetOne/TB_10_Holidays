@@ -114,6 +114,26 @@ console.log(next);
 
 // Un palíndromo es una palabra que se escribe igual del derecho que del revés por ejemplo orejero, rallar o somos.  Crea la función esPalindromo que recibirá una cadena de texto y deberá devolver si es un palíndromo o no.
 //      Si la función no recibe una cadena de texto o está vacía 'no es un formato correcto'
+console.log('Sobre el ejercicio de los palindromos:');
+
+const esPalindromo = (palabra) => { //Aquí se compara y te devuelve el resultado
+    if ((typeof(palabra) !== 'string') || (palabra === "")) {
+        return `Lo siento, ${palabra} no es un formato correcto`
+    } else if (palabra === inversorDePalabras(palabra)) {
+        return `La palabra ${palabra} es un palindromo`
+    } else {
+        return `La palabra ${palabra} no es un palindromo :(`
+    }
+}
+const inversorDePalabras = (palabra) => { //Esta funcion invierte la palabra
+    return palabra.split("").reverse().join("");
+}
+
+console.log(`Si le pasamos el valor 69, el resultado que nos da es:\n${esPalindromo(69)}`)
+console.log(`\nSi le pasamos un string vacio, el resultado que nos da es:\n${esPalindromo("")}`)
+console.log(`\nSi le pasamos el valor 'aguacate', el resultado que nos da es:\n${esPalindromo("aguacate")}`)
+console.log(`\nSi le pasamos el valor 'arañara', el resultado que nos da es:\n${esPalindromo("arañara")}`)
+console.log(next);
 
 
 // Crea la función getPrecioMostrar para que devuelva una cadena de texto con formato precio con dos decimales. Para 2 debería devolver 2.00 €. 
