@@ -83,33 +83,34 @@ console.log(next);
 
 
 // Crea la función getCiudadesOrdenada. La función recibirá una cadena de texto de ciudades separadas por comas y devolverá un array de ciudades ordenadas alfabéticamente si la función no recibe una cadena de texto o recibe una cadena de texto sin comas debe devolver 'no es un formato correcto'
+console.log('Sobre el ejercicio de separar una cadena de texto separada por comas y generar un array de ello:');
 
-let ciudades = 'a,b,c,d,e,f,g'
+let ciudades = 'Valencia,Barcelona,Sevilla,Granada,Gandia,Chicago,Tokio'
+
+console.log(`\nLa lista de ciudades es: ${ciudades}`)
 
 const getCiudadesOrdenada = (cadena) => {
     const comas = []
     const resultado = []
     for (let i = 0; i < cadena.length; i++) { //Este bucle for saca las posiciones de las comas
-        console.log(cadena.substring(i, (i + 1)))
         if (cadena.substring(i, (i + 1)) === ',') {
-            console.log(`Se ha añadido al string la ',' que esta situada en la posicion ${i+1}`)
             comas.push(i + 1)
         }
     }
-    for (let i = 0; i < comas.length; i++) {
+    for (let i = 0; i < comas.length; i++) { //De este bucle calculamos la posicion y dimension de las ciudades y se guardan en el array correcto
         if (i === 0) {
-            resultado.push(cadena.substring(0, (comas[i])))
+            resultado.push(cadena.substring(0, ((comas[i] - 1))))
         } else {
-            resultado.push(cadena.substring(comas[(i - 1)], comas[i]))
+            resultado.push(cadena.substring(comas[(i - 1)], (comas[i] - 1)))
         }
     }
-
-    console.log(comas.length)
-    console.log(comas)
-    console.log(resultado) //Devuelve una coma de mas...
+    return resultado
 }
 
-console.log(getCiudadesOrdenada(ciudades))
+console.log(`\nEl array resultante de realizar esto es el siguiente:`)
+console.log(getCiudadesOrdenada(ciudades));
+console.log(next);
+
 
 // Un palíndromo es una palabra que se escribe igual del derecho que del revés por ejemplo orejero, rallar o somos.  Crea la función esPalindromo que recibirá una cadena de texto y deberá devolver si es un palíndromo o no.
 //      Si la función no recibe una cadena de texto o está vacía 'no es un formato correcto'
