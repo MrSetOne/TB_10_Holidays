@@ -278,7 +278,6 @@ const esPrimo = (num) => {
     return respuesta
 }
 
-
 console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 5, nos devuelve: ${esPrimo(5)}`)
 console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 10, nos devuelve: ${esPrimo(10)}`)
 console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 991, nos devuelve: ${esPrimo(991)}`)
@@ -312,19 +311,70 @@ console.log(next);
 //      %: módulo, resto de la división entre operando1 y operando2.
 
 
-
-
-
-
+const operaciones = { //Libreria de las operaciones requeridas
+    suma: (num1, num2) => {
+        return num1 + num2
+    },
+    resta: (num1, num2) => {
+        return num1 - num2
+    },
+    multiplicar: (num1, num2) => {
+        return num1 * num2
+    },
+    dividir: (num1, num2) => {
+        return num1 / num2
+    },
+    exponer: (num1, num2) => {
+        return num1 ^ num2
+    },
+    resto: (num1, num2) => {
+        return num1 % num2
+    },
+}
 
 
 
 // Esto es para ejecutar el ejercicio de numeros primos
-// let preguntaNumero = prompt("Dime un numero y te dire si es primo:")
-
-
+alert('Dale a siguiente para iniciar el script de numeros primos =>')
+let preguntaNumero = prompt("Dime un numero y te dire si es primo:")
+alert(esPrimo(preguntaNumero))
 
 
 // Esto es para ejecutar el ejercicio de la contraseña
-// let passOriginal = prompt("Por favor, introduce la contraseña que deseas")
-// checkPassword(passOriginal)
+alert('Dale a siguiente para iniciar el script de contraseñas =>')
+let passOriginal = prompt("Por favor, introduce la contraseña que deseas")
+checkPassword(passOriginal)
+
+
+//Esto es para ejecutar el ejercicio de la calculadora
+alert('Dale a siguiente para iniciar el script de la calculadora =>')
+let firstNum = prompt('Introduce tu numero')
+let secondNum = prompt('Segundo numero')
+
+firstNum = parseInt(firstNum)
+secondNum = parseInt(secondNum)
+
+let operacion = prompt('Introduce el tipo de operacion que quieres realizar:')
+
+switch (operacion) {
+    case "+":
+        alert(operaciones.suma(firstNum, secondNum));
+        break;
+    case "-":
+        alert(operaciones.resta(firstNum, secondNum));
+        break;
+    case "*":
+        alert(operaciones.multiplicar(firstNum, secondNum));
+        break;
+    case "/":
+        alert(operaciones.dividir(firstNum, secondNum));
+        break;
+    case "^":
+        alert(operaciones.exponer(firstNum, secondNum));
+        break;
+    case "%":
+        alert(operaciones.resto(firstNum, secondNum));
+        break;
+    default:
+        alert `El valor introducido no es valido`
+}
