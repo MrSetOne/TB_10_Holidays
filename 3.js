@@ -138,34 +138,169 @@ console.log(next);
 
 // Crea la función getPrecioMostrar para que devuelva una cadena de texto con formato precio con dos decimales. Para 2 debería devolver 2.00 €. 
 //      Si la función no recibe un número debería devolver devolver 'no es un formato correcto'
+console.log('Sobre el ejercicio de los precios:');
+
+const getPrecioMostrar = (precio) => {
+    if (typeof(precio) === 'number') {
+        return `${precio.toFixed(2)} €`
+    } else {
+        return `Lo siento, ${precio} no es un formato correcto`
+    }
+}
+
+console.log(`Si le pasamos el valor 'aguacate' nos devuelve:\n${getPrecioMostrar('aguacate')}`)
+console.log(`\nSi le pasamos el valor 2 nos devuelve:\n${getPrecioMostrar(2)}`)
+console.log(`\nSi le pasamos el valor 2.5 nos devuelve:\n${getPrecioMostrar(2.5)}`)
+console.log(next);
 
 
 // Crea la función division que acepte como argumento dos números y devuelva el resultado de su división
+console.log('Sobre el ejercicio de la division:');
+
+const division = (num1, num2) => {
+    return num1 / num2
+}
+
+console.log(`En el caso de que le pasemos los valores de 5 y 2 nos devuelve: ${division(5,2)}`)
+console.log(`En el caso de que le pasemos los valores de 1 y 3 nos devuelve: ${division(1,3)}`)
+console.log(`En el caso de que le pasemos los valores de 100000000 y 80 nos devuelve: ${division(100000000,80)}`)
+console.log(next);
 
 
 //  Crea la función esPar que acepte como argumento un número y devuelva true si es par y false si es impar
+console.log('Sobre el ejercicio de saber si un numero es par:');
+
+const esPar = (num) => {
+    if (num % 2 === 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(`En el caso de que pasemos el numero 2 sale: ${esPar(2)}`)
+console.log(`En el caso de que pasemos el numero 5 sale: ${esPar(5)}`)
+console.log(`En el caso de que pasemos el numero 88 sale: ${esPar(88)}`)
+console.log(next);
 
 
 // Crear la función ordenarArray2 que acepta como argumento un array de números y devuelva un array ordenado de mayor a menor
+console.log('Sobre el ejercicio de devolver un array ordenado de mayor a menor:');
+
+const ordenarArray2 = (arr) => {
+    arr = arr.sort((a, b) => a - b)
+    return arr.reverse()
+}
+
+console.log(`En el caso de pasarle el parametro [10, 53, 81, 1, 99, 10000000] nos devuelve:\n[${ordenarArray2([10, 53, 81, 1, 99, 10000000])}]`)
+console.log(`\nEn el caso de pasarle el parametro [50, 87, 1, 66484, 22] nos devuelve:\n[${ordenarArray2([50,87,1,66484,22])}]`)
+console.log(`\nEn el caso de pasarle el parametro [1, 11, 111, 1111, 11111] nos devuelve:\n[${ordenarArray2([1, 11, 111, 1111, 11111])}]`)
+console.log(next);
 
 
 // Crear la función obtenerImpares que acepta como argumento un array de números y devuelva un array con los elementos impares
+console.log('Sobre el ejercicio de devolver un array con los numero impares:');
 
+const obtenerImpares = (nums) => {
+    const impares = []
+    for (const num of nums) {
+        if (num % 2 !== 0) {
+            impares.push(num)
+        }
+    }
+    return impares
+
+}
+
+console.log(`Si añadimos el array [10, 53, 81, 1, 99, 10000000] nos devuelve:\n[${obtenerImpares([10, 53, 81, 1, 99, 10000000])}]`)
+console.log(`\nSi añadimos el array [50, 87, 1, 66484, 22] nos devuelve:\n[${obtenerImpares([50, 87, 1, 66484, 22])}]`)
+console.log(`\nSi añadimos el array [1, 11, 111, 1111, 11111] nos devuelve:\n[${obtenerImpares([1, 11, 111, 1111, 11111])}]`)
+console.log(next);
 
 // Crear la función sumarArray que acepte como argumento un array numérico y devuelva la suma de los números en el array Array: [1, 2, 3] resultado: 6
+console.log('Sobre el ejercicio de devolver la suma de un array:');
 
+const sumarArray = (arr) => {
+    let count = 0;
+    for (const num of arr) {
+        count += num
+    }
+    return count
+}
+
+console.log(`Si añadimos el array [10, 53, 81, 1, 99, 10000000] nos devuelve:\n${sumarArray([10, 53, 81, 1, 99, 10000000])}`)
+console.log(`\nSi añadimos el array [50, 87, 1, 66484, 22] nos devuelve:\n${sumarArray([50, 87, 1, 66484, 22])}`)
+console.log(`\nSi añadimos el array [1, 11, 111, 1111, 11111] nos devuelve:\n${sumarArray([1, 11, 111, 1111, 11111])}`)
+console.log(next);
 
 // Crear la función multiplicarArray que acepte como argumento un array numérico y devuelva la multiplicación de los números en el array Array: [2, 3, 4] resultado: 24
+console.log('Sobre el ejercicio de devolver la multiplicacion de un array:');
+
+const multiplicarArray = (arr) => {
+    let count = 1
+    for (const num of arr) {
+        count *= num
+    }
+    return count
+}
+
+console.log(`Si añadimos el array [10, 53, 81, 1, 99, 10000000] nos devuelve:\n${multiplicarArray([10, 53, 81, 1, 99, 10000000])}`)
+console.log(`\nSi añadimos el array [50, 87, 1, 66484, 22] nos devuelve:\n${multiplicarArray([50, 87, 1, 66484, 22])}`)
+console.log(`\nSi añadimos el array [1, 11, 111, 1111, 11111] nos devuelve:\n${multiplicarArray([1, 11, 111, 1111, 11111])}`)
+console.log(next);
 
 
 // Crea una función que dada una array de números, devuelve una nueva array que tenga solo los números que son 5 o más. Ejemplo entrada [3, 6, 8, 2] salida [6, 8]
+const masDe5 = (arr) => {
+    const count = []
+    for (const num of arr) {
+        if (num > 5) {
+            count.push(num)
+        }
+    }
+    return count
+}
+
+console.log(`Si añadimos el array [10, 7, 3, 2, 1, 25, 6] nos devuelve:\n[${masDe5([10, 7, 3, 2, 1, 25, 6])}]`)
+console.log(next);
 
 
 // Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos por parámetro para que nos indique si es o no un número primo, debe devolver true si es primo sino false. 
 //      Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
+console.log('****IMPORTANTE****\n\nEl ejercicio de los numero primos me devuelve error, ya que la funcion "promp" no la reconoce nodeJS, de ahi el error que vereis al final de la ejecucion.\n\nPara probar el funcionamiento del Promp teneis que abrir el idex.html, igualmente os dejo aquí algunos ejemplos:')
+const esPrimo = (num) => {
+    let respuesta = true
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            respuesta = false
+        }
+    }
+    return respuesta
+}
 
 
-// Crea una función checkPasswordcon una variable tipo String que contenga una contraseña cualquiera. Después se te pedirá que introduzcas la contraseña (usando prompt), con 3 intentos. Cuando aciertes ya no pedirá más la contraseña y mostrará un mensaje diciendo “Enhorabuena”(ej.un alert). Piensa bien en la condición de salida (3 intentos y si acierta sale, aunque le queden intentos).
+console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 5, nos devuelve: ${esPrimo(5)}`)
+console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 10, nos devuelve: ${esPrimo(10)}`)
+console.log(`Si le pasamos a la funcion 'esPrimo()' el valor de 991, nos devuelve: ${esPrimo(991)}`)
+console.log(next);
+
+
+// Crea una función checkPassword con una variable tipo String que contenga una contraseña cualquiera. Después se te pedirá que introduzcas la contraseña (usando prompt), con 3 intentos. Cuando aciertes ya no pedirá más la contraseña y mostrará un mensaje diciendo “Enhorabuena”(ej.un alert). Piensa bien en la condición de salida (3 intentos y si acierta sale, aunque le queden intentos).
+console.log('****IMPORTANTE****\n\nEl ejercicio de la contraseña me devuelve error, ya que la funcion "promp" no la reconoce nodeJS, de ahi el error que vereis al final de la ejecucion.\n\nPara probar el funcionamiento del Promp teneis que abrir el idex.html.')
+
+const checkPassword = (pass) => {
+    for (let i = 0; i < 3; i++) {
+        let passTry = prompt("Introudce tu contraseña")
+        if (passTry == pass) {
+            alert("Enhorabuena")
+            i = 2
+        } else {
+            alert(`Contraseña incorrecta, intento: ${(i+1)}/3`)
+        }
+    }
+}
+
+console.log(next);
 
 
 // Crea una función llamada CalculadoraInversa, nos pedirá 2 operandos (int) y un signo aritmético (String), según este último se realizará la operación correspondiente. Al final mostrará el resultado en un cuadro de diálogo. Los signos aritméticos disponibles son:
@@ -175,3 +310,21 @@ console.log(next);
 //      /: divide los operandos, este debe dar un resultado con decimales (double)
 //      ^: 1o operando como base y 2o como exponente.
 //      %: módulo, resto de la división entre operando1 y operando2.
+
+
+
+
+
+
+
+
+
+// Esto es para ejecutar el ejercicio de numeros primos
+// let preguntaNumero = prompt("Dime un numero y te dire si es primo:")
+
+
+
+
+// Esto es para ejecutar el ejercicio de la contraseña
+// let passOriginal = prompt("Por favor, introduce la contraseña que deseas")
+// checkPassword(passOriginal)
